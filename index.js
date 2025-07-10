@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const toolsGrid = document.getElementById('toolsGrid');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('searchInput');
+    let currentCategory = 'all';
 
 const tools = [
   {
@@ -821,71 +826,75 @@ const tools = [
   }
 ];
 
-let currentCategory = 'all';
-let currentTool = null;
-
 function createToolCard(tool) {
-  const card = document.createElement('div');
-  card.className = 'tool-card';
-  card.innerHTML = `
-                <div class="pricing-badge ${tool.pricing}">${tool.pricing}</div>
-                <div class="tool-icon">${tool.icon}</div>
-                <div class="tool-name">${tool.name}</div>
-            `;
-
-  card.addEventListener('click', () => showToolDetail(tool));
-  return card;
-}
-
-function showToolDetail(tool) {
-  currentTool = tool;
-  document.getElementById('modalIcon').textContent = tool.icon;
-  document.getElementById('modalTitle').textContent = tool.name;
-  document.getElementById('modalPricing').textContent = tool.pricing;
-  document.getElementById('modalPricing').className = `modal-pricing ${tool.pricing}`;
-  document.getElementById('modalDescription').textContent = tool.description;
-  document.getElementById('useNowBtn').href = tool.url;
-  document.getElementById('learnMoreBtn').href = tool.resourceUrl;
-  document.getElementById('detailModal').classList.add('active');
-}
-
-function filterTools(category) {
-  currentCategory = category;
-  const grid = document.getElementById('toolsGrid');
-  grid.innerHTML = '';
-
-  const filteredTools = category === 'all'
-    ? tools
-    : tools.filter(tool => tool.categories.includes(category));
-
-  filteredTools.forEach(tool => {
-    grid.appendChild(createToolCard(tool));
-  });
-}
-
-function init() {
-  // Initialize with all tools
-  filterTools('all');
-
-  // Add filter event listeners
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      filterTools(btn.dataset.category);
-    });
-  });
-
-  // Modal controls
-  document.getElementById('closeModal').addEventListener('click', () => {
-    document.getElementById('detailModal').classList.remove('active');
-  });
-
-  document.getElementById('detailModal').addEventListener('click', (e) => {
-    if (e.target.id === 'detailModal') {
-      document.getElementById('detailModal').classList.remove('active');
+        const div = document.createElement('div');
+        div.className = 'tool-card';
+        div.innerHTML = `
+            <div class="tool-icon">${tool.icon}</div>
+            <div class="tool-name">${tool.name}</div>
+            <div class="pricing-badge ${tool.pricing}">${tool.pricing}</div>
+        `;
+        div.addEventListener('click', () => showToolDetail(tool));
+        return div;
     }
-  });
-}
 
-init();
+    function renderTools(category, searchQuery = "") {
+        toolsGrid.innerHTML = '';
+
+        let filteredTools = tools.filter(tool => 
+            (category === 'all' || tool.categories.includes(category)) &&
+            (tool.name.toLowerCase().includes(searchQuery) || 
+             tool.description.toLowerCase().includes(searchQuery))
+        );
+
+        filteredTools.forEach(tool => {
+            toolsGrid.appendChild(createToolCard(tool));
+        });
+    }
+
+    function showToolDetail(tool) {
+        document.getElementById('modalIcon').textContent = tool.icon;
+        document.getElementById('modalTitle').textContent = tool.name;
+        const pricingEl = document.getElementById('modalPricing');
+        pricingEl.textContent = tool.pricing;
+        pricingEl.className = `modal-pricing ${tool.pricing}`;
+        document.getElementById('modalDescription').textContent = tool.description;
+        document.getElementById('useNowBtn').href = tool.url;
+        document.getElementById('learnMoreBtn').href = tool.resourceUrl;
+        document.getElementById('detailModal').classList.add('active');
+    }
+
+    document.getElementById('closeModal').addEventListener('click', () => {
+        document.getElementById('detailModal').classList.remove('active');
+    });
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCategory = btn.getAttribute('data-category');
+            renderTools(currentCategory, searchInput.value.toLowerCase());
+        });
+    });
+
+    searchInput.addEventListener('input', (e) => {
+        renderTools(currentCategory, e.target.value.toLowerCase());
+    });
+
+    function updateCategoryCounts() {
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            const category = btn.getAttribute('data-category');
+            let count = (category === 'all') 
+                ? tools.length 
+                : tools.filter(tool => tool.categories.includes(category)).length;
+            btn.innerHTML = `${capitalize(category)} (${count})`;
+        });
+    }
+
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    updateCategoryCounts();
+    renderTools(currentCategory);
+});

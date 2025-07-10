@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>AI Tools Directory</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
     <div class="container">
@@ -13,18 +13,24 @@
             <p>Discover the best AI tools for every need</p>
         </div>
 
+        <div class="search-box" style="text-align: center; margin-bottom: 20px;">
+            <input type="text" id="searchInput" placeholder="Search tools by name or description..." 
+                   style="padding: 8px; border-radius: 8px; border: 1px solid #ccc; width: 80%; max-width: 400px;">
+        </div>
+
         <div class="filters">
-            <button class="filter-btn active" data-category="all">All Tools</button>
+            <button class="filter-btn active" data-category="all">All</button>
             <button class="filter-btn" data-category="daily">Daily Use</button>
-            <button class="filter-btn" data-category="tech">Tech</button>
+            <button class="filter-btn" data-category="productivity">Productivity</button>
+            <button class="filter-btn" data-category="development">Tech</button>
             <button class="filter-btn" data-category="design">Design</button>
-            <button class="filter-btn" data-category="content">Content</button>
+            <button class="filter-btn" data-category="content">Content Creation</button>
             <button class="filter-btn" data-category="business">Business</button>
             <button class="filter-btn" data-category="study">Study</button>
         </div>
 
         <div class="tools-grid" id="toolsGrid">
-            <!-- Tools will be populated by JavaScript -->
+            <!-- Tools populated by JavaScript -->
         </div>
     </div>
 
@@ -44,6 +50,6 @@
         </div>
     </div>
 
-   <script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
