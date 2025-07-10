@@ -1,881 +1,891 @@
 
-const aiTools = [
-  // Daily Use / Productivity
+const tools = [
   {
     name: "ChatGPT",
-    category: "productivity",
+    icon: "🤖",
+    categories: ["daily", "content", "study", "business"],
     pricing: "freemium",
-    description: "Ask questions, write emails, create content, solve problems, code help, translations, and general assistance.",
+    description: "Advanced conversational AI for writing, coding, analysis, and creative tasks. Perfect for daily productivity and learning.",
     url: "https://chat.openai.com",
-    icon: "🤖"
+    resourceUrl: "https://www.youtube.com/watch?v=JTxsNm9IdYU"
   },
   {
     name: "Notion AI",
-    category: "productivity",
+    icon: "📝",
+    categories: ["daily", "productivity", "study"],
     pricing: "freemium",
-    description: "Write notes, brainstorm ideas, summarize content, create action items, and organize information.",
+    description: "Write notes, brainstorm ideas, summarize content, and organize information with AI features.",
     url: "https://notion.so",
-    icon: "📝"
+    resourceUrl: "https://www.youtube.com/watch?v=-xGyGHCd2pA"
   },
   {
     name: "Grammarly",
-    category: "productivity",
+    icon: "✍️",
+    categories: ["daily", "productivity", "study"],
     pricing: "freemium",
-    description: "Fix grammar, improve writing tone, check spelling, and enhance clarity in emails and documents.",
+    description: "Fix grammar, enhance writing tone, check spelling, and boost clarity in documents and emails.",
     url: "https://grammarly.com",
-    icon: "✍️"
+    resourceUrl: "https://www.grammarly.com/blog/"
   },
   {
     name: "Calendly",
-    category: "productivity",
+    icon: "📅",
+    categories: ["daily", "business"],
     pricing: "freemium",
-    description: "Schedule meetings automatically, find available times, send reminders, and manage appointments.",
+    description: "Schedule meetings, automate reminders, and coordinate appointments seamlessly.",
     url: "https://calendly.com",
-    icon: "📅"
+    resourceUrl: "https://www.youtube.com/watch?v=6h9YHLj3tFs"
   },
   {
     name: "Todoist",
-    category: "productivity",
+    icon: "✅",
+    categories: ["daily", "productivity"],
     pricing: "freemium",
-    description: "Create tasks with natural language, set smart reminders, organize projects, and track productivity.",
+    description: "Organize tasks, set smart reminders, manage projects, and boost daily productivity.",
     url: "https://todoist.com",
-    icon: "✅"
+    resourceUrl: "https://todoist.com/blog"
   },
   {
     name: "Otter.ai",
-    category: "productivity",
+    icon: "🎤",
+    categories: ["daily", "business", "study"],
     pricing: "freemium",
-    description: "Record meetings, get live transcripts, generate summaries, and identify speakers automatically.",
+    description: "Record meetings, transcribe in real time, generate summaries, and identify speakers.",
     url: "https://otter.ai",
-    icon: "🎤"
+    resourceUrl: "https://www.youtube.com/watch?v=KnN-xq4jvug"
   },
   {
     name: "Zapier",
-    category: "productivity",
+    icon: "⚡",
+    categories: ["daily", "business", "development"],
     pricing: "freemium",
-    description: "Connect apps, automate repetitive tasks, trigger actions, and create workflows without coding.",
+    description: "Connect apps, automate repetitive tasks, and create no-code workflows.",
     url: "https://zapier.com",
-    icon: "⚡"
+    resourceUrl: "https://zapier.com/learn/automation/"
   },
-
-  // Tech / Development
   {
     name: "GitHub Copilot",
-    category: "development",
+    icon: "👨‍💻",
+    categories: ["development"],
     pricing: "paid",
-    description: "Write code faster, get function suggestions, auto-complete code, and debug with AI assistance.",
+    description: "Accelerate coding with smart AI suggestions, auto-completion, and debug assistance.",
     url: "https://github.com/features/copilot",
-    icon: "👨‍💻"
+    resourceUrl: "https://www.youtube.com/watch?v=sgzbYpQ1h8k"
   },
   {
     name: "Cursor",
-    category: "development",
+    icon: "🖱️",
+    categories: ["development"],
     pricing: "freemium",
     description: "Edit code with natural language, generate functions, refactor code, and pair-program with AI.",
     url: "https://cursor.sh",
-    icon: "🖱️"
+    resourceUrl: "https://www.youtube.com/watch?v=SW8AVIh7k78"
   },
   {
     name: "Vercel v0",
-    category: "development",
+    icon: "🎨",
+    categories: ["development", "design"],
     pricing: "free",
-    description: "Generate React components, create UI designs, build interfaces from text descriptions.",
+    description: "Generate React components and UIs from text prompts for rapid prototyping.",
     url: "https://v0.dev",
-    icon: "🎨"
+    resourceUrl: "https://vercel.com/blog/introducing-v0"
   },
   {
     name: "Replit",
-    category: "development",
+    icon: "💻",
+    categories: ["development", "study"],
     pricing: "freemium",
     description: "Code online, debug programs, learn programming, collaborate on projects, and deploy apps.",
     url: "https://replit.com",
-    icon: "💻"
+    resourceUrl: "https://www.youtube.com/watch?v=E7HY3vJnlZw"
   },
   {
     name: "Tabnine",
-    category: "development",
+    icon: "🔮",
+    categories: ["development"],
     pricing: "freemium",
     description: "Auto-complete code, predict next lines, learn from your codebase, and speed up development.",
     url: "https://tabnine.com",
-    icon: "🔮"
+    resourceUrl: "https://www.youtube.com/watch?v=S1x_vIEvfUY"
   },
   {
     name: "Codeium",
-    category: "development",
+    icon: "🚀",
+    categories: ["development"],
     pricing: "free",
     description: "Get code suggestions, chat about code, search codebases, and accelerate programming.",
     url: "https://codeium.com",
-    icon: "🚀"
+    resourceUrl: "https://www.youtube.com/watch?v=7Z5k6Wgk9VY"
   },
   {
     name: "DeepCode",
-    category: "development",
+    icon: "🔍",
+    categories: ["development"],
     pricing: "freemium",
-    description: "Find bugs, detect security issues, get improvement suggestions, and review code quality.",
+    description: "Find bugs, detect security issues, get suggestions to improve code quality.",
     url: "https://snyk.io/platform/deepcode-ai",
-    icon: "🔍"
+    resourceUrl: "https://snyk.io/blog/introducing-deepcode"
   },
-
-  // Content Creation
   {
     name: "Runway",
-    category: "content",
+    icon: "🎬",
+    categories: ["content", "design"],
     pricing: "freemium",
-    description: "Create videos from text, edit footage, generate effects, and produce professional video content.",
+    description: "Create and edit videos with AI, from text-to-video to advanced effects.",
     url: "https://runwayml.com",
-    icon: "🎬"
+    resourceUrl: "https://www.youtube.com/watch?v=5Q26D9M2sRg"
   },
   {
     name: "DALL-E 2",
-    category: "content",
+    icon: "🎨",
+    categories: ["content", "design"],
     pricing: "paid",
     description: "Generate images from text, create art, design logos, and produce visual content instantly.",
     url: "https://openai.com/dall-e-2",
-    icon: "🎨"
+    resourceUrl: "https://www.youtube.com/watch?v=36qgUzlgBLw"
   },
   {
     name: "Midjourney",
-    category: "content",
+    icon: "🖼️",
+    categories: ["content", "design"],
     pricing: "paid",
-    description: "Create stunning artwork, generate illustrations, design concepts, and produce artistic images.",
+    description: "Generate stunning artwork, illustrations, and creative visuals from text prompts.",
     url: "https://midjourney.com",
-    icon: "🖼️"
+    resourceUrl: "https://www.youtube.com/watch?v=5r_LfG3hxEg"
   },
   {
     name: "ElevenLabs",
-    category: "content",
+    icon: "🔊",
+    categories: ["content"],
     pricing: "freemium",
     description: "Generate realistic voices, clone speech, create audiobooks, and produce voice content.",
     url: "https://elevenlabs.io",
-    icon: "🔊"
+    resourceUrl: "https://www.youtube.com/watch?v=Q9WJOc6vDtc"
   },
   {
     name: "Jasper",
-    category: "content",
+    icon: "📄",
+    categories: ["content"],
     pricing: "paid",
     description: "Write marketing copy, create blog posts, generate ad content, and produce written materials.",
     url: "https://jasper.ai",
-    icon: "📄"
+    resourceUrl: "https://www.youtube.com/watch?v=EAwrD28rY2s"
   },
   {
     name: "Luma AI",
-    category: "content",
+    icon: "🎥",
+    categories: ["content", "design"],
     pricing: "freemium",
     description: "Create 3D models, generate videos, capture scenes, and produce immersive content.",
     url: "https://lumalabs.ai",
-    icon: "🎥"
+    resourceUrl: "https://www.lumalabs.ai/blog"
   },
   {
     name: "Synthesia",
-    category: "content",
+    icon: "🎭",
+    categories: ["content"],
     pricing: "paid",
     description: "Create AI presenter videos, generate training content, and produce multilingual videos.",
     url: "https://synthesia.io",
-    icon: "🎭"
+    resourceUrl: "https://www.youtube.com/watch?v=vvRKi1-8Ox8"
   },
-
-  // Study / Learning
   {
     name: "Quillbot",
-    category: "study",
+    icon: "📚",
+    categories: ["study", "content"],
     pricing: "freemium",
     description: "Paraphrase text, improve writing, summarize content, and enhance academic papers.",
     url: "https://quillbot.com",
-    icon: "📚"
+    resourceUrl: "https://www.youtube.com/watch?v=tWhiGp8uu_8"
   },
   {
     name: "Socratic",
-    category: "study",
+    icon: "🧠",
+    categories: ["study"],
     pricing: "free",
-    description: "Get homework help, solve math problems, understand concepts, and learn step-by-step.",
+    description: "Get homework help, solve math problems, and understand concepts step-by-step.",
     url: "https://socratic.org",
-    icon: "🧠"
+    resourceUrl: "https://www.youtube.com/watch?v=7A5HSCnZ75M"
   },
   {
     name: "Coursera AI",
-    category: "study",
+    icon: "🎓",
+    categories: ["study"],
     pricing: "freemium",
     description: "Take online courses, get personalized learning paths, and earn certificates.",
     url: "https://coursera.org",
-    icon: "🎓"
+    resourceUrl: "https://blog.coursera.org"
   },
   {
     name: "Anki",
-    category: "study",
+    icon: "🃏",
+    categories: ["study"],
     pricing: "freemium",
-    description: "Create flashcards, memorize efficiently, schedule reviews, and track learning progress.",
+    description: "Use smart flashcards to memorize efficiently, with spaced repetition.",
     url: "https://apps.ankiweb.net",
-    icon: "🃏"
+    resourceUrl: "https://www.youtube.com/watch?v=Z-zNHHpXoMM"
   },
   {
     name: "SciSpace",
-    category: "study",
+    icon: "🔬",
+    categories: ["study"],
     pricing: "freemium",
-    description: "Understand research papers, get explanations, summarize studies, and explore literature.",
+    description: "Understand research papers, get explanations, and summarize studies.",
     url: "https://typeset.io",
-    icon: "🔬"
+    resourceUrl: "https://www.youtube.com/watch?v=cEWAKgWJqAY"
   },
   {
     name: "Turnitin",
-    category: "study",
+    icon: "🔍",
+    categories: ["study", "business"],
     pricing: "paid",
-    description: "Check for plagiarism, get writing feedback, ensure originality, and improve academic work.",
+    description: "Check plagiarism, ensure originality, and get writing feedback.",
     url: "https://turnitin.com",
-    icon: "🔍"
+    resourceUrl: "https://www.turnitin.com/blog"
   },
-
-  // Design
   {
     name: "Canva AI",
-    category: "design",
+    icon: "🎨",
+    categories: ["design", "content"],
     pricing: "freemium",
-    description: "AI-powered design platform with magic resize, background removal, and text-to-image generation features.",
+    description: "Design graphics, resize content, remove backgrounds, and generate images from text.",
     url: "https://canva.com",
-    icon: "🎨"
+    resourceUrl: "https://www.youtube.com/watch?v=8fr0Z0RzKZg"
   },
   {
     name: "Figma AI",
-    category: "design",
+    icon: "🎯",
+    categories: ["design"],
     pricing: "freemium",
-    description: "AI features in Figma for design suggestions, auto-layout, and collaborative design enhancement.",
+    description: "Collaborative design platform with smart AI suggestions and auto-layout.",
     url: "https://figma.com",
-    icon: "🎯"
+    resourceUrl: "https://www.youtube.com/watch?v=cdLJcZR-Ngk"
   },
   {
     name: "Adobe Firefly",
-    category: "design",
+    icon: "🔥",
+    categories: ["design", "content"],
     pricing: "freemium",
-    description: "Adobe's AI creative suite for text-to-image, text effects, and generative fill in Photoshop.",
+    description: "Adobe's suite for generating images, text effects, and creative assets from prompts.",
     url: "https://firefly.adobe.com",
-    icon: "🔥"
+    resourceUrl: "https://helpx.adobe.com/firefly"
   },
   {
     name: "Stable Diffusion",
-    category: "design",
+    icon: "🌟",
+    categories: ["design", "content"],
     pricing: "paid",
-    description: "Open-source AI image generator that creates high-quality images from text descriptions.",
+    description: "Open-source model to generate high-quality images from text.",
     url: "https://stability.ai",
-    icon: "🌟"
+    resourceUrl: "https://stability.ai/blog"
   },
   {
     name: "Remove.bg",
-    category: "design",
+    icon: "🖼️",
+    categories: ["design"],
     pricing: "freemium",
-    description: "AI-powered background removal tool that automatically detects and removes backgrounds from images.",
+    description: "Automatically remove image backgrounds for clean cutouts.",
     url: "https://remove.bg",
-    icon: "🖼️"
+    resourceUrl: "https://www.youtube.com/watch?v=5EKCzVqSHxg"
   },
-
-  // Business
   {
     name: "Salesforce Einstein",
-    category: "business",
+    icon: "📊",
+    categories: ["business"],
     pricing: "paid",
-    description: "AI-powered CRM features for sales forecasting, lead scoring, and customer insights automation.",
+    description: "AI inside Salesforce for sales forecasting, lead scoring, and insights.",
     url: "https://salesforce.com/products/einstein",
-    icon: "📊"
+    resourceUrl: "https://www.youtube.com/watch?v=sH2mCS5UGDs"
   },
   {
     name: "HubSpot AI",
-    category: "business",
+    icon: "🎯",
+    categories: ["business"],
     pricing: "freemium",
-    description: "AI tools for marketing automation, content creation, and customer service within HubSpot's CRM.",
+    description: "Automate marketing, generate content, and enhance CRM with AI tools.",
     url: "https://hubspot.com",
-    icon: "🎯"
+    resourceUrl: "https://blog.hubspot.com"
   },
   {
     name: "Intercom",
-    category: "business",
+    icon: "💬",
+    categories: ["business"],
     pricing: "paid",
-    description: "AI-powered customer service platform with chatbots, automated responses, and conversation routing.",
+    description: "AI chatbots, auto responses, and support workflows for customer engagement.",
     url: "https://intercom.com",
-    icon: "💬"
+    resourceUrl: "https://www.youtube.com/watch?v=0V4km-WU-DY"
   },
   {
     name: "Zoom AI",
-    category: "business",
+    icon: "📹",
+    categories: ["business"],
     pricing: "freemium",
-    description: "AI meeting assistant with real-time transcription, summary generation, and action item extraction.",
+    description: "Get meeting summaries, transcripts, and action points with Zoom's AI.",
     url: "https://zoom.us",
-    icon: "📹"
+    resourceUrl: "https://blog.zoom.us"
   },
   {
     name: "Slack AI",
-    category: "business",
+    icon: "💼",
+    categories: ["business"],
     pricing: "paid",
-    description: "AI features in Slack for message summarization, search enhancement, and workflow automation.",
+    description: "Summarize conversations, improve search, and automate workflows in Slack.",
     url: "https://slack.com",
-    icon: "💼"
+    resourceUrl: "https://slack.com/blog"
   },
-
   {
     name: "Heen",
-    category: "productivity",
+    icon: "🧑‍🎤",
+    categories: ["productivity", "content"],
     pricing: "freemium",
-    description: "Create your own personalized AI avatar that mimics your style and expressions for videos or presentations.",
+    description: "Make personalized AI avatars that mimic your expressions for video.",
     url: "https://heen.ai",
-    icon: "🧑‍🎤"
-  },
-  {
-    name: "ElevenLabs",
-    category: "content",
-    pricing: "freemium",
-    description: "Clone voices or generate realistic speech for your avatar, video or podcast.",
-    url: "https://elevenlabs.io",
-    icon: "🎙️"
+    resourceUrl: "https://www.heen.ai"
   },
   {
     name: "Suno AI",
-    category: "content",
+    icon: "🎵",
+    categories: ["content"],
     pricing: "freemium",
-    description: "Generates custom background audio and music for videos, games, or personal use.",
+    description: "Create background music or custom audio for videos, games, or personal use.",
     url: "https://suno.ai",
-    icon: "🎵"
+    resourceUrl: "https://suno.ai/blog"
   },
   {
     name: "NotebookLM",
-    category: "study",
+    icon: "📓",
+    categories: ["study", "productivity"],
     pricing: "free",
-    description: "Transforms documents, PPTs, blogs, or videos into podcasts, summaries and notes.",
+    description: "Transform documents into summaries, podcasts, or note highlights.",
     url: "https://notebooklm.google",
-    icon: "📓"
+    resourceUrl: "https://notebooklm.google.com"
   },
   {
     name: "Claude.ai",
-    category: "development",
+    icon: "🤖",
+    categories: ["development", "productivity"],
     pricing: "freemium",
-    description: "Conversational AI known for safe & reliable code explanations and generation.",
+    description: "AI assistant for safe, reliable conversations and code explanations.",
     url: "https://claude.ai",
-    icon: "🤖"
+    resourceUrl: "https://www.anthropic.com"
   },
   {
     name: "Apollo.io",
-    category: "business",
+    icon: "🚀",
+    categories: ["business"],
     pricing: "freemium",
-    description: "Sales intelligence and engagement platform to automate lead generation.",
+    description: "Sales engagement platform to automate lead generation.",
     url: "https://apollo.io",
-    icon: "🚀"
+    resourceUrl: "https://www.youtube.com/watch?v=Q6H_KhMhC_k"
   },
   {
     name: "Instantly.ai",
-    category: "business",
+    icon: "✉️",
+    categories: ["business"],
     pricing: "paid",
-    description: "Cold email and outreach automation to scale B2B campaigns.",
+    description: "Automate cold emails and scale your outreach campaigns.",
     url: "https://instantly.ai",
-    icon: "✉️"
+    resourceUrl: "https://instantly.ai/blog"
   },
   {
     name: "Flux.ai",
-    category: "design",
+    icon: "🎨",
+    categories: ["design"],
     pricing: "freemium",
-    description: "AI for image generation and visual design, often in product or circuit design.",
+    description: "Use AI for circuit or visual product design tasks.",
     url: "https://flux.ai",
-    icon: "🎨"
+    resourceUrl: "https://flux.ai/blog"
   },
   {
     name: "Perplexity",
-    category: "productivity",
+    icon: "🔍",
+    categories: ["productivity", "study"],
     pricing: "freemium",
-    description: "Conversational AI search engine that gives sourced answers to any query.",
+    description: "Conversational AI search engine that cites its answers.",
     url: "https://perplexity.ai",
-    icon: "🔍"
+    resourceUrl: "https://www.youtube.com/watch?v=dyGJmgIbydM"
   },
   {
     name: "Winston AI",
-    category: "business",
+    icon: "🕵️‍♂️",
+    categories: ["business"],
     pricing: "paid",
-    description: "Detects AI-generated content and checks originality, used by educators & businesses.",
+    description: "Detect AI-generated text and check originality in documents.",
     url: "https://winston.ai",
-    icon: "🕵️‍♂️"
+    resourceUrl: "https://winston.ai/blog"
   },
   {
     name: "N8n",
-    category: "development",
+    icon: "🔗",
+    categories: ["development", "business"],
     pricing: "freemium",
-    description: "Workflow automation tool that connects different apps and automates complex tasks.",
+    description: "Automate tasks and connect apps in advanced workflows.",
     url: "https://n8n.io",
-    icon: "🔗"
+    resourceUrl: "https://n8n.io/blog"
   },
   {
     name: "Google AI Studio",
-    category: "development",
+    icon: "🧪",
+    categories: ["development"],
     pricing: "free",
-    description: "Experiment with Google's generative models, prompt testing and rapid prototyping.",
+    description: "Experiment with Google's generative models, prompt testing and prototyping.",
     url: "https://makersuite.google.com",
-    icon: "🧪"
+    resourceUrl: "https://developers.google.com/machine-learning"
   },
   {
     name: "Manus",
-    category: "design",
+    icon: "🧤",
+    categories: ["design"],
     pricing: "paid",
-    description: "VR and motion capture gloves for immersive 3D design and animation workflows.",
+    description: "VR gloves for immersive 3D design and motion capture in animation workflows.",
     url: "https://manus-meta.com",
-    icon: "🧤"
+    resourceUrl: "https://www.youtube.com/@ManusMeta"
   },
   {
     name: "Windsurf",
-    category: "business",
+    icon: "📄",
+    categories: ["business"],
     pricing: "freemium",
-    description: "AI for automating project documentation, proposals, and contracts.",
+    description: "AI for auto-generating project documentation, contracts, and proposals.",
     url: "https://windsurf.ai",
-    icon: "📄"
+    resourceUrl: "https://windsurf.ai/blog"
   },
   {
     name: "Claude Code",
-    category: "development",
+    icon: "🧑‍💻",
+    categories: ["development"],
     pricing: "freemium",
-    description: "Specialized coding assistant mode of Claude for explaining or refactoring code.",
+    description: "Special coding assistant mode of Claude for explaining or refactoring code.",
     url: "https://claude.ai",
-    icon: "🧑‍💻"
+    resourceUrl: "https://www.anthropic.com"
   },
   {
     name: "Google Makersuite",
-    category: "productivity",
+    icon: "⚙️",
+    categories: ["productivity", "development"],
     pricing: "free",
-    description: "Automate text & creative tasks, build and test prompts for GenAI apps.",
+    description: "Build & test GenAI apps, automate creative tasks, explore prompt engineering.",
     url: "https://makersuite.google.com",
-    icon: "⚙️"
+    resourceUrl: "https://www.youtube.com/watch?v=ydHnXyZtF2Y"
   },
   {
     name: "OpenAI Sora",
-    category: "content",
+    icon: "🎬",
+    categories: ["content"],
     pricing: "coming soon",
-    description: "Generates realistic videos from text descriptions, bringing concepts to motion.",
+    description: "Generates realistic videos from text descriptions for next-gen storytelling.",
     url: "https://openai.com/sora",
-    icon: "🎬"
+    resourceUrl: "https://openai.com/sora"
   },
   {
     name: "Tome",
-    category: "content",
+    icon: "📊",
+    categories: ["content"],
     pricing: "freemium",
-    description: "Create stunning presentations and pitch decks from simple prompts.",
+    description: "Turn text prompts into beautiful presentations and pitch decks instantly.",
     url: "https://tome.app",
-    icon: "📊"
-  },
-  {
-    name: "Midjourney",
-    category: "design",
-    pricing: "paid",
-    description: "Generates high-quality artistic images from text prompts, great for visual storytelling.",
-    url: "https://midjourney.com",
-    icon: "🖼️"
+    resourceUrl: "https://tome.app/blog"
   },
   {
     name: "Fireflies.ai",
-    category: "business",
+    icon: "🎙️",
+    categories: ["business", "productivity"],
     pricing: "freemium",
-    description: "AI that records, transcribes, and summarizes meetings automatically.",
+    description: "AI tool to record, transcribe, and summarize your meetings.",
     url: "https://fireflies.ai",
-    icon: "🎙️"
+    resourceUrl: "https://fireflies.ai/blog"
   },
   {
     name: "Lovable AI",
-    category: "business",
+    icon: "💌",
+    categories: ["business"],
     pricing: "freemium",
-    description: "AI assistant for automating outreach campaigns, personalizing emails, and following up with prospects effortlessly.",
+    description: "Automate outreach campaigns with personalized follow-ups.",
     url: "https://lovable.dev/?via=global20&gad_source=1",
-    icon: "💌"
+    resourceUrl: "https://lovable.dev"
   },
-  // SEO Tools
-{
-  name: "BlogSEO",
-  category: "business",
-  pricing: "freemium",
-  description: "Optimize your blog posts for search engines with keyword analysis and recommendations.",
-  url: "https://blogseo.com",
-  icon: "🔎"
-},
-{
-  name: "Seona AI",
-  category: "business",
-  pricing: "freemium",
-  description: "AI assistant to improve your website’s SEO with actionable insights.",
-  url: "https://seona.ai",
-  icon: "📈"
-},
-{
-  name: "Serpstat",
-  category: "business",
-  pricing: "freemium",
-  description: "All-in-one SEO platform for keyword research, site audit, and rank tracking.",
-  url: "https://serpstat.com",
-  icon: "🚀"
-},
-{
-  name: "VidIQ",
-  category: "business",
-  pricing: "freemium",
-  description: "YouTube SEO tool to optimize videos, track rankings, and find content opportunities.",
-  url: "https://vidiq.com",
-  icon: "🎥"
-},
-{
-  name: "Wordlift",
-  category: "business",
-  pricing: "paid",
-  description: "Semantic SEO tool that enriches your content and improves discoverability.",
-  url: "https://wordlift.io",
-  icon: "🧩"
-},
-{
-  name: "Alli AI",
-  category: "business",
-  pricing: "paid",
-  description: "Automate SEO tasks and improve site ranking with smart AI-driven strategies.",
-  url: "https://alli.ai",
-  icon: "🤖"
-},
-
-// Logo tools
-{
-  name: "Logaster",
-  category: "design",
-  pricing: "freemium",
-  description: "Create professional logos and brand identities in minutes with AI.",
-  url: "https://logaster.com",
-  icon: "🎨"
-},
-{
-  name: "Brandmark",
-  category: "design",
-  pricing: "freemium",
-  description: "AI-powered logo maker to design unique logos and brand kits.",
-  url: "https://brandmark.io",
-  icon: "🏷️"
-},
-{
-  name: "Logo AI",
-  category: "design",
-  pricing: "freemium",
-  description: "Generate modern logos and brand assets instantly using AI.",
-  url: "https://logoai.com",
-  icon: "🖌️"
-},
-{
-  name: "Looka",
-  category: "design",
-  pricing: "freemium",
-  description: "Design your logo and brand materials effortlessly with Looka’s AI.",
-  url: "https://looka.com",
-  icon: "✨"
-},
-{
-  name: "Stockimg AI",
-  category: "design",
-  pricing: "freemium",
-  description: "AI image generation tool to create stock photos, art, and illustrations.",
-  url: "https://stockimg.ai",
-  icon: "🖼️"
-},
-
-// Chatbot tools
-{
-  name: "Chatfuel",
-  category: "development",
-  pricing: "freemium",
-  description: "Build Facebook Messenger and Instagram chatbots without coding.",
-  url: "https://chatfuel.com",
-  icon: "💬"
-},
-{
-  name: "ChatSimple",
-  category: "development",
-  pricing: "freemium",
-  description: "Create conversational AI chatbots for websites to capture leads and assist customers.",
-  url: "https://chatsimple.ai",
-  icon: "🤖"
-},
-{
-  name: "Dialogflow",
-  category: "development",
-  pricing: "freemium",
-  description: "Google’s NLP platform to design and deploy conversational agents.",
-  url: "https://dialogflow.cloud.google.com",
-  icon: "🗣️"
-},
-{
-  name: "Droxy",
-  category: "development",
-  pricing: "freemium",
-  description: "Build smart website chatbots that understand user intent.",
-  url: "https://droxy.ai",
-  icon: "⚡"
-},
-{
-  name: "Chatbase",
-  category: "development",
-  pricing: "freemium",
-  description: "Train custom chatbots on your data to answer user questions.",
-  url: "https://chatbase.co",
-  icon: "💡"
-},
-
-// Presentation tools
-{
-  name: "Decktopus",
-  category: "content",
-  pricing: "freemium",
-  description: "AI presentation tool that designs slides from your text prompts.",
-  url: "https://decktopus.com",
-  icon: "📊"
-},
-{
-  name: "Beautiful AI",
-  category: "content",
-  pricing: "freemium",
-  description: "Create beautiful presentations with AI-driven slide design.",
-  url: "https://beautiful.ai",
-  icon: "🎨"
-},
-{
-  name: "Designs AI",
-  category: "content",
-  pricing: "freemium",
-  description: "Platform to create videos, logos, banners, and more with AI.",
-  url: "https://designs.ai",
-  icon: "📹"
-},
-{
-  name: "Gamma AI",
-  category: "content",
-  pricing: "freemium",
-  description: "Transform ideas into visually stunning decks with AI.",
-  url: "https://gamma.app",
-  icon: "🚀"
-},
-{
-  name: "Lumens",
-  category: "content",
-  pricing: "freemium",
-  description: "AI for creating impactful presentations and visual stories.",
-  url: "https://lumens.ai",
-  icon: "💡"
-},
-{
-  name: "Slides AI",
-  category: "content",
-  pricing: "freemium",
-  description: "AI that writes slide decks for you from plain text outlines.",
-  url: "https://slidesai.io",
-  icon: "📝"
-},
-
-// Marketing tools
-{
-  name: "Sendbird",
-  category: "business",
-  pricing: "freemium",
-  description: "Build in-app chat, voice, and video experiences for user engagement.",
-  url: "https://sendbird.com",
-  icon: "📞"
-},
-{
-  name: "Simplified",
-  category: "business",
-  pricing: "freemium",
-  description: "All-in-one app for marketing content, copywriting, video, and design.",
-  url: "https://simplified.com",
-  icon: "⚙️"
-},
-{
-  name: "Trypencil",
-  category: "business",
-  pricing: "freemium",
-  description: "Generate and test hundreds of ad creatives with AI.",
-  url: "https://trypencil.com",
-  icon: "✏️"
-},
-{
-  name: "Adcopy",
-  category: "business",
-  pricing: "freemium",
-  description: "Create high-performing ad copy tailored to your audience.",
-  url: "https://adcopy.ai",
-  icon: "📝"
-},
-{
-  name: "AdCreative",
-  category: "business",
-  pricing: "freemium",
-  description: "AI platform to generate conversion-focused ad creatives.",
-  url: "https://adcreative.ai",
-  icon: "🎯"
-},
-{
-  name: "Mailchimp",
-  category: "business",
-  pricing: "freemium",
-  description: "Email marketing platform with smart automation and analytics.",
-  url: "https://mailchimp.com",
-  icon: "📧"
-},
-
-// Audio tools
-{
-  name: "Auphonic",
-  category: "content",
-  pricing: "freemium",
-  description: "Automatic audio post-production for podcasts, interviews, and videos.",
-  url: "https://auphonic.com",
-  icon: "🎧"
-},
-{
-  name: "Lyrebird",
-  category: "content",
-  pricing: "freemium",
-  description: "Clone voices and generate speech that sounds human-like.",
-  url: "https://descript.com/lyrebird",
-  icon: "🎙️"
-},
-{
-  name: "Sonic",
-  category: "content",
-  pricing: "freemium",
-  description: "AI tool to clean up, enhance, and mix audio for content creators.",
-  url: "https://sonic.app",
-  icon: "🎵"
-},
-
-// Additional image tools
-{
-  name: "Segmind",
-  category: "design",
-  pricing: "freemium",
-  description: "AI-powered image generation and editing platform.",
-  url: "https://segmind.com",
-  icon: "🖌️"
-},
-{
-  name: "Leap",
-  category: "design",
-  pricing: "freemium",
-  description: "Create avatars, images, and art from text with Leap AI.",
-  url: "https://tryleap.ai",
-  icon: "🌈"
-},
-{
-  name: "Clarif AI",
-  category: "design",
-  pricing: "freemium",
-  description: "Image recognition and visual AI platform to tag and analyze photos.",
-  url: "https://clarifai.com",
-  icon: "🔍"
-},
-{
-  name: "Gencraft",
-  category: "design",
-  pricing: "freemium",
-  description: "Text-to-image tool to generate creative visuals from your ideas.",
-  url: "https://gencraft.com",
-  icon: "🖼️"
-}
+  {
+    name: "BlogSEO",
+    icon: "🔎",
+    categories: ["business"],
+    pricing: "freemium",
+    description: "Optimize blog posts with keyword analysis and SEO recommendations.",
+    url: "https://blogseo.com",
+    resourceUrl: "https://blogseo.com"
+  },
+  {
+    name: "Seona AI",
+    icon: "📈",
+    categories: ["business"],
+    pricing: "freemium",
+    description: "Boost your website’s SEO using actionable AI insights.",
+    url: "https://seona.ai",
+    resourceUrl: "https://seona.ai/blog"
+  },
+  {
+    name: "Serpstat",
+    icon: "🚀",
+    categories: ["business"],
+    pricing: "freemium",
+    description: "All-in-one platform for keyword research, site audits, and rank tracking.",
+    url: "https://serpstat.com",
+    resourceUrl: "https://serpstat.com/blog"
+  },
+  {
+    name: "VidIQ",
+    icon: "🎥",
+    categories: ["business", "content"],
+    pricing: "freemium",
+    description: "SEO for YouTube videos: optimize content, track rankings, and find trends.",
+    url: "https://vidiq.com",
+    resourceUrl: "https://www.youtube.com/@vidIQ"
+  },
+  {
+    name: "Wordlift",
+    icon: "🧩",
+    categories: ["business"],
+    pricing: "paid",
+    description: "Semantic SEO tool that enriches your content to improve discoverability.",
+    url: "https://wordlift.io",
+    resourceUrl: "https://wordlift.io/blog"
+  },
+  {
+    name: "Alli AI",
+    icon: "🤖",
+    categories: ["business"],
+    pricing: "paid",
+    description: "Automate SEO improvements and boost site ranking with AI-driven strategies.",
+    url: "https://alli.ai",
+    resourceUrl: "https://alli.ai/blog"
+  },
+  {
+    name: "Logaster",
+    icon: "🎨",
+    categories: ["design"],
+    pricing: "freemium",
+    description: "Create professional logos and brand identities quickly using AI.",
+    url: "https://logaster.com",
+    resourceUrl: "https://www.youtube.com/watch?v=0Pj9MKz9NAA"
+  },
+  {
+    name: "Brandmark",
+    icon: "🏷️",
+    categories: ["design"],
+    pricing: "freemium",
+    description: "Design unique logos and brand kits with AI-powered generator.",
+    url: "https://brandmark.io",
+    resourceUrl: "https://www.youtube.com/watch?v=Fw0JzY7S7yY"
+  },
+  {
+    name: "Logo AI",
+    icon: "🖌️",
+    categories: ["design"],
+    pricing: "freemium",
+    description: "Generate modern logos and brand visuals instantly.",
+    url: "https://logoai.com",
+    resourceUrl: "https://logoai.com/blog"
+  },
+  {
+    name: "Looka",
+    icon: "✨",
+    categories: ["design"],
+    pricing: "freemium",
+    description: "Effortlessly design logos and brand materials with Looka's AI tools.",
+    url: "https://looka.com",
+    resourceUrl: "https://looka.com/blog"
+  },
+  {
+    name: "Stockimg AI",
+    icon: "🖼️",
+    categories: ["design"],
+    pricing: "freemium",
+    description: "Create stock photos, illustrations, and art with AI image generation.",
+    url: "https://stockimg.ai",
+    resourceUrl: "https://stockimg.ai/blog"
+  },
+  {
+    name: "Chatfuel",
+    icon: "💬",
+    categories: ["development", "business"],
+    pricing: "freemium",
+    description: "Build chatbots for Facebook and Instagram without coding.",
+    url: "https://chatfuel.com",
+    resourceUrl: "https://www.youtube.com/watch?v=ykpS2FdGk2k"
+  },
+  {
+    name: "ChatSimple",
+    icon: "🤖",
+    categories: ["development", "business"],
+    pricing: "freemium",
+    description: "Create website chatbots to capture leads and support customers.",
+    url: "https://chatsimple.ai",
+    resourceUrl: "https://chatsimple.ai/blog"
+  },
+  {
+    name: "Dialogflow",
+    icon: "🗣️",
+    categories: ["development"],
+    pricing: "freemium",
+    description: "Google's NLP platform to build and deploy conversational agents.",
+    url: "https://dialogflow.cloud.google.com",
+    resourceUrl: "https://cloud.google.com/dialogflow/docs"
+  },
+  {
+    name: "Droxy",
+    icon: "⚡",
+    categories: ["development"],
+    pricing: "freemium",
+    description: "Build smart chatbots that understand user intent for websites.",
+    url: "https://droxy.ai",
+    resourceUrl: "https://droxy.ai"
+  },
+  {
+    name: "Chatbase",
+    icon: "💡",
+    categories: ["development"],
+    pricing: "freemium",
+    description: "Train custom chatbots on your data to answer user queries.",
+    url: "https://chatbase.co",
+    resourceUrl: "https://chatbase.co/blog"
+  },
+  {
+    name: "Decktopus",
+    icon: "📊",
+    categories: ["content"],
+    pricing: "freemium",
+    description: "AI presentation tool that builds professional slides from your text prompts.",
+    url: "https://decktopus.com",
+    resourceUrl: "https://decktopus.com/blog"
+  },
+  {
+    name: "Beautiful AI",
+    icon: "🎨",
+    categories: ["content", "design"],
+    pricing: "freemium",
+    description: "Create visually appealing presentations with AI slide design.",
+    url: "https://beautiful.ai",
+    resourceUrl: "https://www.youtube.com/@BeautifulAI"
+  },
+  {
+    name: "Designs AI",
+    icon: "📹",
+    categories: ["content", "design"],
+    pricing: "freemium",
+    description: "Generate videos, logos, banners, and more with AI design tools.",
+    url: "https://designs.ai",
+    resourceUrl: "https://designs.ai/blog"
+  },
+  {
+    name: "Gamma AI",
+    icon: "🚀",
+    categories: ["content"],
+    pricing: "freemium",
+    description: "Turn ideas into stunning decks and visual presentations with AI.",
+    url: "https://gamma.app",
+    resourceUrl: "https://gamma.app/blog"
+  },
+  {
+    name: "Lumens",
+    icon: "💡",
+    categories: ["content"],
+    pricing: "freemium",
+    description: "Create impactful presentations and visual stories using AI.",
+    url: "https://lumens.ai",
+    resourceUrl: "https://lumens.ai/blog"
+  },
+  {
+    name: "Slides AI",
+    icon: "📝",
+    categories: ["content"],
+    pricing: "freemium",
+    description: "Generate full slide decks from plain text outlines automatically.",
+    url: "https://slidesai.io",
+    resourceUrl: "https://slidesai.io/blog"
+  },
+  {
+    name: "Sendbird",
+    icon: "📞",
+    categories: ["business"],
+    pricing: "freemium",
+    description: "Add in-app chat, voice, and video to engage your users.",
+    url: "https://sendbird.com",
+    resourceUrl: "https://sendbird.com/blog"
+  },
+  {
+    name: "Simplified",
+    icon: "⚙️",
+    categories: ["business", "content"],
+    pricing: "freemium",
+    description: "All-in-one platform for marketing copy, videos, and graphics.",
+    url: "https://simplified.com",
+    resourceUrl: "https://simplified.com/blog"
+  },
+  {
+    name: "Trypencil",
+    icon: "✏️",
+    categories: ["business"],
+    pricing: "freemium",
+    description: "Generate and test hundreds of ad creatives using AI.",
+    url: "https://trypencil.com",
+    resourceUrl: "https://trypencil.com/blog"
+  },
+  {
+    name: "Adcopy",
+    icon: "📝",
+    categories: ["business"],
+    pricing: "freemium",
+    description: "Create tailored ad copy for your audience with AI assistance.",
+    url: "https://adcopy.ai",
+    resourceUrl: "https://adcopy.ai/blog"
+  },
+  {
+    name: "AdCreative",
+    icon: "🎯",
+    categories: ["business"],
+    pricing: "freemium",
+    description: "Generate conversion-focused ad creatives automatically.",
+    url: "https://adcreative.ai",
+    resourceUrl: "https://adcreative.ai/blog"
+  },
+  {
+    name: "Mailchimp",
+    icon: "📧",
+    categories: ["business"],
+    pricing: "freemium",
+    description: "Email marketing platform with automation and performance tracking.",
+    url: "https://mailchimp.com",
+    resourceUrl: "https://mailchimp.com/resources"
+  },
+  {
+    name: "Auphonic",
+    icon: "🎧",
+    categories: ["content"],
+    pricing: "freemium",
+    description: "Automated audio processing for podcasts, interviews, and video.",
+    url: "https://auphonic.com",
+    resourceUrl: "https://auphonic.com/blog"
+  },
+  {
+    name: "Lyrebird",
+    icon: "🎙️",
+    categories: ["content"],
+    pricing: "freemium",
+    description: "Clone voices and generate lifelike speech for your projects.",
+    url: "https://descript.com/lyrebird",
+    resourceUrl: "https://www.youtube.com/watch?v=PPYtAv6Gnm8"
+  },
+  {
+    name: "Sonic",
+    icon: "🎵",
+    categories: ["content"],
+    pricing: "freemium",
+    description: "Clean, enhance, and mix audio automatically for creators.",
+    url: "https://sonic.app",
+    resourceUrl: "https://sonic.app"
+  },
+  {
+    name: "Segmind",
+    icon: "🖌️",
+    categories: ["design"],
+    pricing: "freemium",
+    description: "AI image generation and editing platform with customization.",
+    url: "https://segmind.com",
+    resourceUrl: "https://segmind.com/blog"
+  },
+  {
+    name: "Leap",
+    icon: "🌈",
+    categories: ["design"],
+    pricing: "freemium",
+    description: "Generate avatars, images, and artwork from text with AI.",
+    url: "https://tryleap.ai",
+    resourceUrl: "https://tryleap.ai/blog"
+  },
+  {
+    name: "Clarif AI",
+    icon: "🔍",
+    categories: ["design"],
+    pricing: "freemium",
+    description: "AI platform for image tagging, recognition, and visual analysis.",
+    url: "https://clarifai.com",
+    resourceUrl: "https://clarifai.com/blog"
+  },
+  {
+    name: "Gencraft",
+    icon: "🖼️",
+    categories: ["design"],
+    pricing: "freemium",
+    description: "Turn text prompts into stunning visuals and illustrations.",
+    url: "https://gencraft.com",
+    resourceUrl: "https://gencraft.com"
+  }
 ];
 
 let currentCategory = 'all';
-let searchQuery = '';
+let currentTool = null;
 
-function renderTools() {
-  const toolsGrid = document.getElementById('toolsGrid');
-  const noResults = document.getElementById('noResults');
+function createToolCard(tool) {
+  const card = document.createElement('div');
+  card.className = 'tool-card';
+  card.innerHTML = `
+                <div class="pricing-badge ${tool.pricing}">${tool.pricing}</div>
+                <div class="tool-icon">${tool.icon}</div>
+                <div class="tool-name">${tool.name}</div>
+            `;
 
-  let filteredTools = aiTools;
+  card.addEventListener('click', () => showToolDetail(tool));
+  return card;
+}
 
-  if (currentCategory !== 'all') {
-    filteredTools = filteredTools.filter(tool => tool.category === currentCategory);
-  }
+function showToolDetail(tool) {
+  currentTool = tool;
+  document.getElementById('modalIcon').textContent = tool.icon;
+  document.getElementById('modalTitle').textContent = tool.name;
+  document.getElementById('modalPricing').textContent = tool.pricing;
+  document.getElementById('modalPricing').className = `modal-pricing ${tool.pricing}`;
+  document.getElementById('modalDescription').textContent = tool.description;
+  document.getElementById('useNowBtn').href = tool.url;
+  document.getElementById('learnMoreBtn').href = tool.resourceUrl;
+  document.getElementById('detailModal').classList.add('active');
+}
 
-  if (searchQuery) {
-    filteredTools = filteredTools.filter(tool =>
-      tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      tool.description.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }
+function filterTools(category) {
+  currentCategory = category;
+  const grid = document.getElementById('toolsGrid');
+  grid.innerHTML = '';
 
-  filteredTools.sort((a, b) => a.name.localeCompare(b.name));
+  const filteredTools = category === 'all'
+    ? tools
+    : tools.filter(tool => tool.categories.includes(category));
 
-  if (filteredTools.length === 0) {
-    toolsGrid.style.display = 'none';
-    noResults.style.display = 'block';
-    return;
-  }
+  filteredTools.forEach(tool => {
+    grid.appendChild(createToolCard(tool));
+  });
+}
 
-  toolsGrid.style.display = 'grid';
-  noResults.style.display = 'none';
+function init() {
+  // Initialize with all tools
+  filterTools('all');
 
-  toolsGrid.innerHTML = filteredTools.map(tool => `
-  <div class="tool-card" data-tool="${tool.name}">
-    <div class="tool-header">
-      <div class="tool-icon">${tool.icon}</div>
-      <div class="tool-info">
-        <h3>${tool.name}</h3>
-        <span class="pricing-badge ${tool.pricing}">${tool.pricing}</span>
-      </div>
-    </div>
-    <div class="tool-description">${tool.description}</div>
-    <a class="use-now-btn" href="${tool.url}" target="_blank">
-      Use Now →
-    </a>
-  </div>
-`).join('');
-  }
+  // Add filter event listeners
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterTools(btn.dataset.category);
+    });
+  });
 
-// toggle light/dark mode
-document.getElementById('themeToggle').addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  localStorage.setItem('theme',
-    document.body.classList.contains('dark') ? 'dark' : 'light'
-  );
-});
+  // Modal controls
+  document.getElementById('closeModal').addEventListener('click', () => {
+    document.getElementById('detailModal').classList.remove('active');
+  });
 
-// Category filtering
-document.getElementById('categories').addEventListener('click', (e) => {
-  if (e.target.classList.contains('category-btn')) {
-    document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
-    e.target.classList.add('active');
-    currentCategory = e.target.dataset.category;
-    renderTools();
-  }
-});
-
-function updateCategoryCounts() {
-  const categories = {
-    all: aiTools.length,
-    productivity: aiTools.filter(tool => tool.category === "productivity").length,
-    development: aiTools.filter(tool => tool.category === "development").length,
-    content: aiTools.filter(tool => tool.category === "content").length,
-    study: aiTools.filter(tool => tool.category === "study").length,
-    design: aiTools.filter(tool => tool.category === "design").length,
-    business: aiTools.filter(tool => tool.category === "business").length,
-  };
-
-  document.querySelectorAll('.category-btn').forEach(btn => {
-    const cat = btn.dataset.category;
-    const countSpan = btn.querySelector('.count');
-    if (countSpan) {
-      countSpan.textContent = `(${categories[cat] || 0})`;
+  document.getElementById('detailModal').addEventListener('click', (e) => {
+    if (e.target.id === 'detailModal') {
+      document.getElementById('detailModal').classList.remove('active');
     }
   });
 }
 
-// Search functionality
-document.getElementById('searchInput').addEventListener('input', (e) => {
-  searchQuery = e.target.value;
-  renderTools();
-});
-
-// Card click to expand/collapse
-document.addEventListener('click', (e) => {
-  const card = e.target.closest('.tool-card');
-  if (card && !e.target.classList.contains('use-now-btn')) {
-    card.classList.toggle('expanded');
-  }
-});
-
-// Initial render
-renderTools();
-updateCategoryCounts();
-renderTools();
-
-chrome.action.onClicked.addListener(() => {
-  chrome.tabs.create({ url: "index.html" });
-});
+init();
