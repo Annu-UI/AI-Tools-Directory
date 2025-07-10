@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Tools Directory</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <button id="themeToggle">🌙</button>
+      <h1>AI Tools Directory</h1>
+      <p>Discover the best AI tools for productivity, development, and creativity</p>
+    </div>
+
+    <div class="search-container">
+      <input type="text" class="search-box" placeholder="Search AI tools..." id="searchInput">
+    </div>
+
+  <div class="categories" id="categories">
+  <button class="category-btn active" data-category="all">All Tools <span class="count">(0)</span></button>
+  <button class="category-btn" data-category="productivity">Daily Use <span class="count">(0)</span></button>
+  <button class="category-btn" data-category="development">Tech <span class="count">(0)</span></button>
+  <button class="category-btn" data-category="content">Content Creation <span class="count">(0)</span></button>
+  <button class="category-btn" data-category="study">Study <span class="count">(0)</span></button>
+  <button class="category-btn" data-category="design">Design <span class="count">(0)</span></button>
+  <button class="category-btn" data-category="business">Business <span class="count">(0)</span></button>
+</div>
+
+
+    <div class="tools-grid" id="toolsGrid">
+    </div>
+
+    <div class="no-results" id="noResults" style="display: none;">
+      <p>No tools found matching your search.</p>
+    </div>
+  </div>
+  <script src="index.js" defer></script>
+</body>
+
+</html>
