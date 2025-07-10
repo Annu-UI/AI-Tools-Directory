@@ -8,7 +8,6 @@ Works both as a standalone web app and as a Chrome extension.
 ---
 
 ## Features
-- Light and dark mode toggle (with saved preference)
 - Live search filtering by name and description
 - Category filters showing real-time tool counts
 - Responsive grid layout for desktop and mobile
@@ -38,13 +37,13 @@ Works both as a standalone web app and as a Chrome extension.
 ├── index.css         # Styles and theme  
 ├── index.js          # Rendering, filtering, theme toggle  
 ├── manifest.json     # Chrome extension configuration  
-├── icons/            # Extension icons  
+├── logo            
 └── README.md
 
 ---
 
 ## Customization
-- Modify `index.css` to change the theme (colors, gradients, dark mode palette).
+- Modify `index.css` to change the theme (colors, gradients).
 - Edit the `aiTools` array in `index.js` to add or remove AI tools.
 
 ---
@@ -55,5 +54,5 @@ Licensed under the MIT License.
 ---
 
 ## Author
-Created by [Annu Kumari].  
+Created by [Annu].  
 For issues, questions, or contributions, please open an issue on this repository.
